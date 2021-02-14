@@ -41,12 +41,19 @@ class Battery():
         """Выводит информацию о мощности аккумулятора."""
         print(f"This car has a {self.battery_size}-kWt battery.")
 
+    def upgrade_battery(self):
+        if self.battery_size < 85:
+            self.battery_size = 85
+
     def get_range(self):
         """Выводит приблизительный запас хода для аккумулятора."""
         if self.battery_size == 70:
             range = 240
         elif self.battery_size == 85:
             range = 270
+        else:
+            range = 30 + self.battery_size * 3
+            
         message = f"This car can go approximately {range}"
         message += " miles on a full charge."
         print(message)
