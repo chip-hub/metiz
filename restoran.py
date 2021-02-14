@@ -24,7 +24,7 @@ class IceCreamStand(Restaurant):
 
     def icecream_menu(self):
         print(f"Все виды мороженого: {self.flavors}")
-
+"""
 restaurant = Restaurant("айвенго", "европейский")
 print(restaurant.restaurant_name)
 print(restaurant.cuisine_type)
@@ -42,3 +42,4 @@ i_rest.icecream_menu()
 #rest3 = Restaurant("фудзияма", "японский")
 #rest2.describe_restaurant()
 #rest3.describe_restaurant()
+"""
