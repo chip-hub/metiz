@@ -12,7 +12,9 @@ def count_words(filename):
         words = data.split()
         num_words = len(words)
         print(f"The file {filename} has about {num_words} wods.")
+        word = "home"
+        print(f"Слово {word} встречалось {data.count(word)} раз.") 
 
-filenames = ['alice.txt', 'fignya.txt']
+filenames = ['alice.txt', 'fignya.txt', 'the_princess_casamassima.txt', 'the_grey_monk.txt']
 for filename in filenames:
     count_words('files_txt\\' + filename)
