@@ -13,16 +13,21 @@ def get_stored_username():
     else:
         return username
 
+def save_new_username():
+    username = input("What is your name? ")
+    filename = 'username.json'
+    with open(filename, 'w') as file_obj:
+        json.dump(username, file_obj)
+        print(f"We'll remember you when you come back, {username}!")
+
 def greet_user():
     """Приветствует пользователя по имени."""
     username = get_stored_username()
     if username:
         print(f"Welcom back, {username}!")
+        if input("It's you, isn't it (y/n)?").lower() == 'n':
+            save_new_username()
     else:
-        username = input("What is your name? ")
-        filename = 'username.json'
-        with open(filename, 'w') as file_obj:
-            json.dump(username, file_obj)
-            print(f"We'll remember you when you come back, {username}!")
+        save_new_username()
 
 greet_user()
